@@ -1,5 +1,4 @@
 <?php
-
 /**
  * plugin Name: Carrousel
  * description: Affiche un carrousel d'images côntrolé par des boutons radio
@@ -8,7 +7,7 @@
  */
 
 
-function eddym_enqueu()
+function eddym_enqueue()
 {
     $version_css = filemtime(plugin_dir_path(__FILE__) . "style.css");
     $version_js = filemtime(plugin_dir_path(__FILE__) . "js/carrousel.js");
@@ -28,7 +27,7 @@ function eddym_enqueu()
         true
     ); // true permet d'ajouter le script à la fin du document
 }
-
+add_action('wp_enqueue_scripts', 'eddym_enqueue');
 
 
 function genere_html()
