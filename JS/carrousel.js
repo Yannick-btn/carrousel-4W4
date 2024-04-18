@@ -8,7 +8,6 @@
   let galerie = document.querySelector(".galerie");
   //let galerie_img = document.querySelector('img'); // premiere image seulement
 
-
   let carrousel__figure = document.querySelector(".carrousel__figure");
 
   let galerie_img = document.querySelectorAll("img");
