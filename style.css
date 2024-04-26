@@ -38,4 +38,10 @@
   top: 0%;
   left: 0%;
   object-fit: cover;
+}
+
+.carrousel__form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }/*# sourceMappingURL=style.css.map */

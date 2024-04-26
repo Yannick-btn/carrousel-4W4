@@ -28,6 +28,13 @@ function eddym_enqueue()
     ); // true permet d'ajouter le script à la fin du document
 }
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
+/* Important
+Dans header.php
+wp_header() juste avant la boite de la balise fermante </head>
+Dans footer.php
+wp_footer() juste avant la boite de la balise fermante </body>
+*/
+ 
 
 
 function genere_html()
