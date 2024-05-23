@@ -1,14 +1,5 @@
 <?php
-/**
- * plugin Name: Carrousel
- * description: Affiche un carrousel d'images côntrolé par des boutons radio
- * author: Yannick Bastien
- * version: 1.0.0
- */
-
-
-function eddym_enqueue()
-{
+function eddym_enqueue() {
     $version_css = filemtime(plugin_dir_path(__FILE__) . "style.css");
     $version_js = filemtime(plugin_dir_path(__FILE__) . "js/carrousel.js");
 
@@ -25,30 +16,20 @@ function eddym_enqueue()
         array(),
         $version_js,
         true
-    ); // true permet d'ajouter le script à la fin du document
+    );
 }
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
-/* Important
-Dans header.php
-wp_header() juste avant la boite de la balise fermante </head>
-Dans footer.php
-wp_footer() juste avant la boite de la balise fermante </body>
-*/
- 
 
-
-function genere_html()
-{
-    /////////////////////////////////////// HTML
-    // Le conteneur d'une boîte
-
+function genere_html() {
     $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
        <div class="carrousel">
         <button class="carrousel__x">X</button>
+        <button class="carrousel__prev">←</button>
         <figure class="carrousel__figure"></figure>
+        <button class="carrousel__next">→</button>
         <form class="carrousel__form"></form>
-        
        </div>';
     return $contenu;
 }
 add_shortcode('carrousel', 'genere_html');
+?>

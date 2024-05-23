@@ -38,10 +38,37 @@
   top: 0%;
   left: 0%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carrousel__img:first-child {
+  opacity: 1;
 }
 
 .carrousel__form {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.carrousel__prev,
+.carrousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carrousel__prev {
+  left: 10px;
+}
+
+.carrousel__next {
+  right: 10px;
 }/*# sourceMappingURL=style.css.map */
