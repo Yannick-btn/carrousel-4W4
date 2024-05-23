@@ -1,5 +1,5 @@
 .carrousel {
-  position: absolute;
+  position: fixed;
   transform: scale(0);
   transition: transform 0.25s;
   width: 50%;

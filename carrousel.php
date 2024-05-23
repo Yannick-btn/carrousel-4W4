@@ -21,7 +21,7 @@ function eddym_enqueue() {
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
 
 function genere_html() {
-    $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
+    $contenu = '
        <div class="carrousel">
         <button class="carrousel__x">X</button>
         <button class="carrousel__prev">←</button>
