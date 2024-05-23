@@ -1,10 +1,8 @@
 (function () {
   let carrousel = document.querySelector(".carrousel");
   let carrousel__x = document.querySelector(".carrousel__x");
-
   let galerie = document.querySelector(".galerie");
   let carrousel__figure = document.querySelector(".carrousel__figure");
-
   let galerie_img = galerie.querySelectorAll("img");
   let index = 0;
 
@@ -21,11 +19,16 @@
     index = index + 1;
   }
 
-  /**
-   * Creer une image dans le carrousel à partir d'une image de la galerie
-   * @param {*} index numero de l'image
-   * @param {*} elm image de la galerie
-   */
+  // Fonction pour fermer le carrousel lorsqu'on clique à l'extérieur de celui-ci
+  function fermerCarrouselSiExterieur(event) {
+    if (!carrousel.contains(event.target) && !event.target.classList.contains('carrousel__x')) {
+      carrousel.classList.remove('carrousel--ouvrir');
+    }
+  }
+
+  // Ajouter un gestionnaire d'événements pour écouter les clics sur l'ensemble du document
+  document.addEventListener('mousedown', fermerCarrouselSiExterieur);
+
   function creer_image_carrousel(index, elm) {
     let carrousel__img = document.createElement("img");
     carrousel__img.classList.add("carrousel__img");
@@ -37,10 +40,6 @@
     }
   }
 
-  /**
-   * Creer les radio button dans le carrousel
-   * @param {*} index numero du radio boutton
-   */
   function creer_radio_carrousel(index) {
     let carrousel__radio = document.createElement("input");
     carrousel__radio.type = "radio";
@@ -86,10 +85,4 @@
 
   document.querySelector(".carrousel__prev").addEventListener("click", prev_image);
   document.querySelector(".carrousel__next").addEventListener("click", next_image);
-
-  carrousel.addEventListener("click", function (e) {
-    if (e.target === carrousel) {
-      carrousel.classList.remove("carrousel--ouvrir");
-    }
-  });
 })();
