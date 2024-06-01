@@ -1,4 +1,10 @@
 <?php
+/*
+Plugin Name: carrousel
+Description: Description de mon extension.
+Version: 1.0
+Author: Votre Nom
+*/
 function eddym_enqueue() {
     $version_css = filemtime(plugin_dir_path(__FILE__) . "style.css");
     $version_js = filemtime(plugin_dir_path(__FILE__) . "js/carrousel.js");
